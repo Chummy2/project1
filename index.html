@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Blake Unit 2 Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="intro">
+  <h1>Gaming News</h1>
+  <p>All the news you need for gaming</p>
+  </div>
+  <hr>
+  <!-- Change the image below to one you want to uses!-->
+  <img src="images/logo.jpg" alt="logo">
+  <h2>Genres</h2>
+  <div class="sectionsContainer">
+    <div class="section">
+      <a
+        href="https://www.cnbc.com/2023/06/12/apple-hits-record-high-one-week-after-announcing-vision-pro-vr-headset.html">
+        <h2>VR News</h2>
+      </a>
+      <img src="images/vr.jpg" alt="vr news">
+
+      <!--Add text, images, and links for section 1 below!-->
+
+    </div>
+    <div class="section">
+      <a href="https://www.polygon.com/23759179/embracer-tomb-raider-lotr-restructure-studio-closures-lay-offs" >
+        <h2>Daily News</h2>
+      </a>
+      <img src="images/daily.png" alt="daily news">
+      <!--Add text, images, and links for section 2 below!-->
+
+    </div>
+    <div class="section">
+      <a
+        href="https://www.gameshub.com/news/news/the-game-awards-2022-major-game-announcements-trailers-reveals-35776/">
+        <h2>Game Award News</h2>
+      </a>
+      <img src="images/award.jpg" alt="award news">
+      <!--Add text, images, and links for section 3 below!-->
+
+    </div>
+    <div class="section">
+      <a
+        href="https://www.gameshub.com/news/news/the-game-awards-2022-major-game-announcements-trailers-reveals-35776/">
+        <h2>Game Awards</h2>
+      </a>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lxzq6hxqMCg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <!--Add text, images, and links for section 3 below!-->
+
+    </div>
+  </div>
+  <h3>Join Our Newsletter</h3>
+  <form name="submit-to-google-sheet">
+    <input name="email" type="email" placeholder="Email" required>
+    <button type="submit">Send</button>
+  </form>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyPVzw2AqG4QFebmFF0DwG_z7Eu6MflzK3_mJzJw_edlgL3pDfVd5_qVfXSALAnteKd/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+
+</html>
